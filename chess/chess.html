@@ -2,6 +2,7 @@
  
 <head>
 <link rel="stylesheet" type="text/css" href="chess.css">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title> Chess </title>
 </head>
  
@@ -9,127 +10,124 @@
     
  
 <div class="input">
-    <FORM NAME="form1">
-        <INPUT TYPE="text" class="txt" name="input" VALUE="" requiredminlength="4" maxlength="4" size="6"><BR>
-        <INPUT TYPE="button" class="btn" name="bouton" VALUE="Submit" onClick="controle(form1)" >
+    <FORM NAME="form">
+        <INPUT TYPE="text" class="txt" name="input" VALUE="" requiredminlength="4" maxlength="5" size="7"><BR>
+        <INPUT TYPE="button" class="btn" name="bouton" VALUE="Submit" onClick="controle(form)" >
     </FORM> 
 </div>
  
  
  
  
-<table id="plateau" cellspacing = "0" cellpadding="20"> <!--cellpadding et cellspacing pour retirer les bordures-->
+<table id="plateau" cellspacing = "" cellpadding=""> 
  
- <tr>
-        <div class="yc">
-            <h1>8</h1>
-            <h1>7</h1>
-            <h1>6</h1>
-            <h1>5</h1>
-            <h1>4</h1>
-            <h1>3</h1>
-            <h1>2</h1>
-            <h1>1</h1>
-        </div>
- </tr>
 
-<tr class="repaire">8
-    <td class="repaire">A</td class="repaire">
-    <td class="repaire">B</td class="repaire">
-    <td class="repaire">C</td class="repaire">
-    <td class="repaire">D</td class="repaire">
-    <td class="repaire">E</td class="repaire">
-    <td class="repaire">F</td class="repaire">
-    <td class="repaire">G</td class="repaire">
-    <td class="repaire">H</td class="repaire">
+<tr>
+    <th class="ver">    </th>
+    <td>A</td>
+    <td>B</td>
+    <td>C</td>
+    <td>D</td>
+    <td>E</td>
+    <td>F</td>
+    <td>G</td>
+    <td>H</td>
 </tr>      
     
 <tr> 
-<td class="blanc"><input class="blanc" type="number" alt="piece"  id="case00" /></td>
-<td class="noir"><input class="noir" type="number" alt="piece"  id="case01" /></td>
-<td class="blanc"><input class="blanc" type="number" alt="piece"  id="case02" /></td>
-<td class="noir"><input class="noir" type="number" alt="piece"  id="case03" /></td>
-<td class="blanc"><input class="blanc" type="number" alt="piece"  id="case04" /></td>
-<td class="noir"><input class="noir" type="number" alt="piece"  id="case05" /></td>
-<td class="blanc"><input class="blanc" type="number" alt="piece"  id="case06" /></td>
-<td class="noir"><input class="noir" type="number" alt="piece"  id="case07" /></td>
+    <th class="ver">8</th>
+    <td class="blanc" id="A8"><img src="./pieces/r.gif"></td>
+    <td class="noir" id="B8"><img src="./pieces/n.gif"></td>
+    <td class="blanc" id="C8"><img src="./pieces/b.gif"></td>
+    <td class="noir" id="D8"><img src="./pieces/q.gif"></td>
+    <td class="blanc" id="E8"><img src="./pieces/k.gif"></td>
+    <td class="noir" id="F8"><img src="./pieces/b.gif"></td>
+    <td class="blanc" id="G8"><img src="./pieces/n.gif"></td>
+    <td class="noir" id="H8"><img src="./pieces/r.gif"></td>
 </tr>
  
-<tr > 
-<td class="noir"><input class="noir" type="number" alt="piece"  id="case10" /></td>
-<td class="blanc"><input class="blanc" type="number" alt="piece"  id="case11" /></td>
-<td class="noir"><input class="noir" type="number" alt="piece"  id="case12" /></td>
-<td class="blanc"><input class="blanc" type="number" alt="piece"  id="case13" /></td>
-<td class="noir"><input class="noir" type="number" alt="piece"  id="case14" /></td>
-<td class="blanc"><input class="blanc" type="number" alt="piece"  id="case15" /></td>
-<td class="noir"><input class="noir" type="number" alt="piece"  id="case16" /></td>
-<td class="blanc"><input class="blanc" type="number" alt="piece"  id="case17" /></td>
+<tr >
+    <th class="ver">7</th> 
+    <td class="noir" id="A7"><img src="./pieces/p.gif"></td>
+    <td class="blanc" id="B7"><img src="./pieces/p.gif"></td>
+    <td class="noir" id="C7"><img src="./pieces/p.gif"></td>
+    <td class="blanc" id="D7"><img src="./pieces/p.gif"></td>
+    <td class="noir" id="E7"><img src="./pieces/p.gif"></td>
+    <td class="blanc" id="F7"><img src="./pieces/p.gif"></td>
+    <td class="noir" id="G7"><img src="./pieces/p.gif"></td>
+    <td class="blanc" id="H7"><img src="./pieces/p.gif"></td>
+    </tr>
+ 
+<tr> 
+    <th class="ver">6</th>
+    <td class="blanc" id="A6"></td>
+    <td class="noir" id="B6"></td>
+    <td class="blanc" id="C6"></td>
+    <td class="noir" id="D6"></td>
+    <td class="blanc" id="E6"></td>
+    <td class="noir" id="F6"></td>
+    <td class="blanc" id="G6"></td>
+    <td class="noir" id="H6"></td>
 </tr>
  
 <tr> 
-<td class="blanc"><input class="blanc" type="number" alt="vide"  id="case20" /></td>
-<td class="noir"><input class="noir" type="number" alt="vide"  id="case21" /></td>
-<td class="blanc"><input class="blanc" type="number" alt="vide"  id="case22" /></td>
-<td class="noir"><input class="noir" type="number" alt="vide"  id="case23" /></td>
-<td class="blanc"><input class="blanc" type="number" alt="vide"  id="case24" /></td>
-<td class="noir"><input class="noir" type="number" alt="vide"  id="case25" /></td>
-<td class="blanc"><input class="blanc" type="number" alt="vide"  id="case26" /></td>
-<td class="noir"><input class="noir" type="number" alt="vide"  id="case27" /></td>
+    <th class="ver" >5</th>   
+    <td class="noir" id="A5"></td>
+    <td class="blanc" id="B5"></td>
+    <td class="noir" id="C5"></td>
+    <td class="blanc" id="D5"></td>
+    <td class="noir" id="E5"></td>
+    <td class="blanc" id="F5"></td>
+    <td class="noir" id="G5"></td>
+    <td class="blanc" id="H5"></td>
+</tr>
+ 
+<tr>
+    <th class="ver">4</th>
+    <td class="blanc" id="A4"></td>
+    <td class="noir" id="B4"></td>
+    <td class="blanc" id="C4"></td>
+    <td class="noir" id="D4"></td>
+    <td class="blanc" id="E4"></td>
+    <td class="noir" id="F4"></td>
+    <td class="blanc" id="G4"></td>
+    <td class="noir" id="H4"></td>
 </tr>
  
 <tr> 
-<td class="noir"><input class="noir" type="number" alt="vide"  id="case30" /></td>
-<td class="blanc"><input class="blanc" type="number" alt="vide"  id="case31" /></td>
-<td class="noir"><input class="noir" type="number" alt="vide"  id="case32" /></td>
-<td class="blanc"><input class="blanc" type="number" alt="vide"  id="case33" /></td>
-<td class="noir"><input class="noir" type="number" alt="vide"  id="case34" /></td>
-<td class="blanc"><input class="blanc" type="number" alt="vide"  id="case35" /></td>
-<td class="noir"><input class="noir" type="number" alt="vide"  id="case36" /></td>
-<td class="blanc"><input class="blanc" type="number" alt="vide"  id="case37" /></td>
-</tr>
- 
-<tr> 
-<td class="blanc"><input class="blanc" type="number" alt="vide"  id="case40" /></td>
-<td class="noir"><input class="noir" type="number" alt="vide"  id="case41" /></td>
-<td class="blanc"><input class="blanc" type="number" alt="vide"  id="case42" /></td>
-<td class="noir"><input class="noir" type="number" alt="vide"  id="case43" /></td>
-<td class="blanc"><input class="blanc" type="number" alt="vide"  id="case44" /></td>
-<td class="noir"><input class="noir" type="number" alt="vide"  id="case45" /></td>
-<td class="blanc"><input class="blanc" type="number" alt="vide"  id="case46" /></td>
-<td class="noir"><input class="noir" type="number" alt="vide"  id="case47" /></td>
-</tr>
- 
-<tr> 
-<td class="noir"><input class="noir" type="number" alt="vide"  id="case50" /></td>
-<td class="blanc"><input class="blanc" type="number" alt="vide"  id="case51" /></td>
-<td class="noir"><input class="noir" type="number" alt="vide"  id="case52" /></td>
-<td class="blanc"><input class="blanc" type="number" alt="vide"  id="case53" /></td>
-<td class="noir"><input class="noir" type="number" alt="vide"  id="case54" /></td>
-<td class="blanc"><input class="blanc" type="number" alt="vide"  id="case55" /></td>
-<td class="noir"><input class="noir" type="number" alt="vide"  id="case56" /></td>
-<td class="blanc"><input class="blanc" type="number" alt="vide"  id="case57" /></td>
+    <th class="ver">3</th> 
+    <td class="noir" id="A3"></td>
+    <td class="blanc" id="B3"></td>
+    <td class="noir" id="C3"></td>
+    <td class="blanc" id="D3"></td>
+    <td class="noir" id="E3"></td>
+    <td class="blanc" id="F3"></td>
+    <td class="noir" id="G3"></td>
+    <td class="blanc" id="H3"></td>
 </tr>
  
 <tr>  
-<td class="blanc"><input class="blanc" type="number" alt="piece"  id="case60" /></td>
-<td class="noir"><input class="noir" type="number" alt="piece"  id="case61" /></td>
-<td class="blanc"><input class="blanc" type="number" alt="piece"  id="case62" /></td>
-<td class="noir"><input class="noir" type="number" alt="piece"  id="case63" /></td>
-<td class="blanc"><input class="blanc" type="number" alt="piece"  id="case64" /></td>
-<td class="noir"><input class="noir" type="number" alt="piece"  id="case65" /></td>
-<td class="blanc"><input class="blanc" type="number" alt="piece"  id="case66" /></td>
-<td class="noir"><input class="noir" type="number" alt="piece"  id="case67" /></td>
+    <th class="ver">2</th>
+    <td class="blanc" id="A2"><img src="./pieces/wp.gif"></td>
+    <td class="noir" id="B2"><img src="./pieces/wp.gif"></td>
+    <td class="blanc" id="C2"><img src="./pieces/wp.gif"></td>
+    <td class="noir" id="D2"><img src="./pieces/wp.gif"></td>
+    <td class="blanc" id="E2"><img src="./pieces/wp.gif"></td>
+    <td class="noir" id="F2"><img src="./pieces/wp.gif"></td>
+    <td class="blanc" id="G2"><img src="./pieces/wp.gif"></td>
+    <td class="noir" id="H2"><img src="./pieces/wp.gif"></td>
 </tr>
  
-<tr> 
-<td class="noir"><input class="noir" type="number" alt="piece"  id="case70" /></td>
-<td class="blanc"><input class="blanc" type="number" alt="piece"  id="case71" /></td>
-<td class="noir"><input class="noir" type="number" alt="piece"  id="case72" /></td>
-<td class="blanc"><input class="blanc" type="number" alt="piece"  id="case73" /></td>
-<td class="noir"><input class="noir" type="number" alt="piece"  id="case74" /></td>
-<td class="blanc"><input class="blanc" type="number" alt="piece"  id="case75" /></td>
-<td class="noir"><input class="noir" type="number" alt="piece"  id="case76" /></td>
-<td class="blanc"><input class="blanc" type="number" alt="piece"  id="case77" /></td>
+<tr>
+    <th class="ver">1</th> 
+    <td class="noir" id="A1"><img src="./pieces/wr.gif"></td>
+    <td class="blanc" id="B1"><img src="./pieces/wn.gif"></td>
+    <td class="noir" id="C1"><img src="./pieces/wb.gif"></td>
+    <td class="blanc" id="D1"><img src="./pieces/wq.gif"></td>
+    <td class="noir" id="E1"><img src="./pieces/wk.gif"></td>
+    <td class="blanc" id="F1"><img src="./pieces/wb.gif"></td>
+    <td class="noir" id="G1"><img src="./pieces/wn.gif"></td>
+    <td class="blanc" id="H1"><img src="./pieces/wr.gif"></td>
 </tr>
  
 
